@@ -25,7 +25,7 @@ vars = Variables()
 vars.AddVariables(
   EnumVariable( 'parallelization',
                 'parallelization',
-                'mpi_cuda',
+                'mpi_omp',
                  allowed_values=('mpi_cuda', 'mpi_omp', 'mpi_omp_yask')
               ),
   EnumVariable( 'cpu_arch',
@@ -119,7 +119,7 @@ elif env['parallelization'] in ['mpi_omp_yask']:
    if env['cpu_arch'] == 'knl':
      env.Append( CPPDEFINES = ['USE_INTRIN512'] )
    else:
-     env.Append( CPPDEFINES = ['USE_INTRIN256'] )   
+     env.Append( CPPDEFINES = ['USE_INTRIN256'] )
    env.Append( CPPFLAGS = ['-fopenmp'])
    env.Append( LINKFLAGS = ['-fopenmp'] )
 

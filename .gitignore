@@ -1,0 +1,8 @@
+.envrc
+bin/
+input/
+run/
+*.pyc
+*.dblite
+testcase/320x320x2048/run.sh
+job/
