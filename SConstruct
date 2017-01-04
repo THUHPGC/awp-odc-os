@@ -127,7 +127,7 @@ elif env['parallelization'] in ['mpi_omp_yask']:
 env.Append( CPPPATH = [Dir('#.').path, Dir('#./src')] )
 
 # enable c++11
-env.Append( CXXFLAGS="-std=c++11" )
+env.Append( CXXFLAGS="-std=c++98" )
 
 # check for debug mode
 if env['mode'] == 'debug':

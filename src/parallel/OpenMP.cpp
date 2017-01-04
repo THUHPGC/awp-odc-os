@@ -36,8 +36,8 @@ static inline void makeAssignment(int x, int y, int z, int m_nWPX, int m_nWPY, i
   // the stress WP are offset by the number of vel WPs plus one MPI WP
   int indexStress = indexVel + 1 + l_nWP_oneKernel;
 
-  m_workPackages[indexVel].type    = odc::parallel::WorkPackageType::WP_VelUpdate;
-  m_workPackages[indexStress].type = odc::parallel::WorkPackageType::WP_StressUpdate;
+  m_workPackages[indexVel].type    = odc::parallel::WP_VelUpdate;
+  m_workPackages[indexStress].type = odc::parallel::WP_StressUpdate;
 	
   m_workPackages[indexVel].start[0] = m_workPackages[indexStress].start[0] = startX;
   m_workPackages[indexVel].start[1] = m_workPackages[indexStress].start[1] = startY;

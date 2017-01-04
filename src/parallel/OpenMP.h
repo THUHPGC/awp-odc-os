@@ -30,13 +30,23 @@
 #include "parallel/Mpi.hpp"
 #include "constants.hpp"
 
+
 namespace odc {
   namespace parallel {
     class OpenMP;
     class WorkPackage;
     class OmpManager;
 
-    enum WorkPackageType : unsigned short;
+    //enum WorkPackageType : unsigned short;
+		enum WorkPackageType{
+			WP_VelUpdate,
+			WP_StressUpdate,
+			WP_FreeSurface_VelUpdate,
+			WP_FreeSurface_StressUpdate,
+			WP_MPI_Vel,
+			WP_MPI_Stress    
+		};
+    //enum WorkPackageType;
   }
 }
 
@@ -359,6 +369,18 @@ public:
  * Labels for the different types of work packages.  
  * Note(Josh): The long names make me squirm but that seems to be the style we are going with.
  **/
+/*
+enum odc::parallel::WorkPackageType = \
+{
+  WP_VelUpdate,
+  WP_StressUpdate,
+  WP_FreeSurface_VelUpdate,
+  WP_FreeSurface_StressUpdate,
+  WP_MPI_Vel,
+  WP_MPI_Stress    
+}
+*/
+/*
 enum odc::parallel::WorkPackageType : unsigned short
 {
   WP_VelUpdate,
@@ -368,6 +390,7 @@ enum odc::parallel::WorkPackageType : unsigned short
   WP_MPI_Vel,
   WP_MPI_Stress    
 };
+*/
 
 /**
  * Mostly a placeholder class for when WorkPackages are more complex

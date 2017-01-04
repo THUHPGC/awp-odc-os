@@ -57,7 +57,8 @@ private:
     bool m_ownedByThisRank;
     
     char m_checkPointFileName[256];
-    FILE *m_checkPointFile = nullptr;
+    //FILE *m_checkPointFile = nullptr;
+    FILE *m_checkPointFile = NULL;
     
 };
 
