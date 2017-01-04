@@ -142,7 +142,7 @@ if env['cov'] == True:
 
 
 # add math library for gcc
-env.Append(LIBS=['m'])
+env.Append(LIBS=['m', 'mpi'], LIBPATH=['/home/cbw/soft/mpich-3.1.4/lib'], CXXFLAGS=['-isystem','/home/cbw/soft/mpich-3.1.4/include'])
 
 # print welcome message
 print( 'Running build script of AWP.' )
